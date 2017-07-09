@@ -7,10 +7,10 @@ from fuzzywuzzy import fuzz
 from multiprocessing import Pool, cpu_count
 
 thread_num = cpu_count()
-KEYWORD_LIST_FIRST = ['mammary implant', 'mammary augmentation', 'mammary enlargement', 'mammary swelling']
-# 'breast pain', 'breast swelling', 'breast cyst', 'breast calcification', 'capsular contracture',
-# 					  'lymph node enlargement', 'firmness of breast', 'breast implant', 'breast augmentation',
-# 					  'breast enlargement', 
+KEYWORD_LIST_FIRST = ['breast pain', 'breast swelling', 'breast cyst', 'breast calcification', 'capsular contracture',
+					  'lymph node enlargement', 'firmness of breast', 'breast implant', 'breast augmentation',
+					  'breast enlargement', 'mammary implant', 'mammary augmentation', 'mammary enlargement', 'mammary swelling']
+
 KEYWORD_LIST_SECOND = ['hematoma', 'mass', 'lump', 'rupture', 'deflated', 'infection', 'abscess', 'leukopenia',
 					   'nodules', 'skin discoloration', 'skin lesion', 'seroma', 'effusion', 'fluid']
 
