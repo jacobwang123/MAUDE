@@ -25,4 +25,3 @@ baseline_col = ['BASELINE_BRAND_NAME', 'BASELINE_GENERIC_NAME', 'BASELINE_MODEL_
 				'BASELINE_DATE_FIRST_MARKETED', 'BASELINE_DATE_CEASED_MARKETING']
 for b in baseline_col:
 	print(b, 'missing :' df_BI_BASELINE.loc[df_BI_BASELINE[b]==np.nan, :].shape[0])
-

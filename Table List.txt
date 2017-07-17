@@ -18,7 +18,7 @@ Count: 149
 Column name: MDR_REPORT_KEY
 Description: MDR intersect from Table 1 and Table 3.
 
-5_FTR_list; 5_FWM_list; 5_smooth_list; 5_textured_list
-Count: 7301; 9348; 102; 1030
+5_FTR_list; 5_FWM_list
+Count: 7301; 9348
 Column name: MDR_REPORT_KEY
-Description: Fill MDR retrieved from development; Surface MDR retrieved from both text mining and development.
+Description: Fill MDR retrieved from development
