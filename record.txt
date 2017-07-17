@@ -1,4 +1,0 @@
-1. BI: 10174
-2. ALCL: 87
-4. ALCL confirmed:
-5. FWM:9497	FTR:7394	smooth:102	textured:1030
