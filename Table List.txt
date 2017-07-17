@@ -1,0 +1,24 @@
+1_BI_KEY_list
+Count: 20512
+Column name: MDR_REPORT_KEY
+Description: All MDR related to breast implant (from both text and development).
+
+2_foitext_implant
+Count: 10658
+Column name: MDR_REPORT_KEY, FOI_TEXT, LABEL(year or add/change)
+Description: MDR related to breast implant (from both text mining only).
+
+3_ALCL: 197
+Count: 197
+Column name: MDR_REPORT_KEY, FOI_TEXT, LABEL(year or add/change)
+Description: MDR related to ALCL (from both text mining only).
+
+4_BI_ALCL_KEY_LIST: 149
+Count: 149
+Column name: MDR_REPORT_KEY
+Description: MDR intersect from Table 1 and Table 3.
+
+5_FTR_list; 5_FWM_list; 5_smooth_list; 5_textured_list
+Count: 7301; 9348; 102; 1030
+Column name: MDR_REPORT_KEY
+Description: Fill MDR retrieved from development; Surface MDR retrieved from both text mining and development.
