@@ -3,6 +3,9 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 .idea/
+foidev/
+.ipynb_checkpoints/
+
 *.py[cod]
 *$py.class
 
