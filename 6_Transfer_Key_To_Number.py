@@ -38,3 +38,11 @@ alcl_bi_result = pd.merge(alcl_bi, mdr, how='inner', on='MDR_REPORT_KEY', left_i
 print(alcl_bi_result.shape[0])
 alcl_bi_result = alcl_bi_result['REPORT_NUMBER']
 alcl_bi_result.to_csv('D:/Workplace/MAUDE/alcl_bi_result.txt')
+
+
+#String manipulation
+with open('alcl_bi_result.txt', 'r', encoding='utf-8') as r:
+	with open('3_ALCL_BI_Number_List.txt', 'w', encoding='utf-8') as w:
+		for line in r:
+			line = line.split(',')
+			w.write(line[1])
