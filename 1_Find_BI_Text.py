@@ -49,21 +49,21 @@ def assign(thread):
 		temp_list = FOI_TEXT_LIST[thread * trunk : (thread+1) * trunk]
 
 	for s in temp_list:
-		# df = pd.read_csv(os.path.join(cwd, 'foitext', 'foitext'+s+'.txt'), sep='|', header=0,
-		# 			     encoding='ISO-8859-1', error_bad_lines=False)
-		# df['FOI_TEXT'] = df['FOI_TEXT'].astype(str)
-		# df['FOI_TEXT'] = df['FOI_TEXT'].map(processLine)
-		# df.to_csv(os.path.join(cwd, 'foitext_normalized', 'foitext_normalized'+s+'.txt'), sep='|', header=True, index=False)
-		df = pd.read_csv(os.path.join(cwd, 'foitext_normalized', 'foitext_normalized'+s+'.txt'), sep='|', header=0,
+		df = pd.read_csv(os.path.join(cwd, 'foitext', 'foitext'+s+'.txt'), sep='|', header=0,
 					     encoding='ISO-8859-1', error_bad_lines=False)
 		df['FOI_TEXT'] = df['FOI_TEXT'].astype(str)
-		df['filter'] = df['FOI_TEXT'].map(fuzzy_match)
-		df = df.loc[df['filter']==True, ['MDR_REPORT_KEY', 'FOI_TEXT']]
-		if s == '':
-			df['LABEL'] = 'new'
-		else:
-			df['LABEL'] = s
-		df.to_csv(os.path.join(cwd, 'foitext_implant.txt'), sep='|', header=False, index=False, mode='a')
+		df['FOI_TEXT'] = df['FOI_TEXT'].map(processLine)
+		df.to_csv(os.path.join(cwd, 'foitext_normalized', 'foitext_normalized'+s+'.txt'), sep='|', header=True, index=False)
+		# df = pd.read_csv(os.path.join(cwd, 'foitext_normalized', 'foitext_normalized'+s+'.txt'), sep='|', header=0,
+		# 			     encoding='ISO-8859-1', error_bad_lines=False)
+		# df['FOI_TEXT'] = df['FOI_TEXT'].astype(str)
+		# df['filter'] = df['FOI_TEXT'].map(fuzzy_match)
+		# df = df.loc[df['filter']==True, ['MDR_REPORT_KEY', 'FOI_TEXT']]
+		# if s == '':
+		# 	df['LABEL'] = 'new'
+		# else:
+		# 	df['LABEL'] = s
+		# df.to_csv(os.path.join(cwd, 'foitext_implant.txt'), sep='|', header=False, index=False, mode='a')
 
 if __name__ == '__main__':
 	FOI_TEXT_LIST = ['', 'Add', 'Change', 'thru1995']
@@ -74,5 +74,5 @@ if __name__ == '__main__':
 	p = Pool(thread_num)
 	p.map(assign, range(thread_num))
 
-	df = pd.read_csv(os.path.join(cwd, 'foitext_implant.txt'), sep='|', header=0, encoding='ISO-8859-1')
-	print(df.shape[0])
+	# df = pd.read_csv(os.path.join(cwd, 'foitext_implant.txt'), sep='|', header=0, encoding='ISO-8859-1')
+	# print(df.shape[0])
