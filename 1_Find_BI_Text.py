@@ -21,15 +21,15 @@ tokenizer = RegexpTokenizer(r'\w+')
 stopwords = nltk.corpus.stopwords.words('english')
 
 def processLine(line):
-    line = line.lower()
-    tokens = tokenizer.tokenize(line)
-    output = []
-    for t in tokens:
-        t = lmtzr.lemmatize(t)
-        if (len(t) <= 2) or (len(t) >= 15) or (t in stopwords) or (t.isdigit()):
-            continue
-        output.append(t)
-    return ' '.join(output)
+	line = line.lower()
+	tokens = tokenizer.tokenize(line)
+	output = []
+	for t in tokens:
+		t = lmtzr.lemmatize(t)
+		if (len(t) <= 2) or (len(t) >= 15) or (t in stopwords) or (t.isdigit()):
+			continue
+		output.append(t)
+	return ' '.join(output)
 
 def fuzzy_match(line):
 	b = False
@@ -50,7 +50,7 @@ def assign(thread):
 
 	for s in temp_list:
 		df = pd.read_csv(os.path.join(cwd, 'foitext', 'foitext'+s+'.txt'), sep='|', header=0,
-					     encoding='ISO-8859-1', error_bad_lines=False)
+						 encoding='ISO-8859-1', error_bad_lines=False)
 		df['FOI_TEXT'] = df['FOI_TEXT'].astype(str)
 		df['FOI_TEXT'] = df['FOI_TEXT'].map(processLine)
 		df.to_csv(os.path.join(cwd, 'foitext_normalized', 'foitext_normalized'+s+'.txt'), sep='|', header=True, index=False)

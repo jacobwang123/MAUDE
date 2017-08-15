@@ -6,7 +6,7 @@ import pandas as pd
 cwd = os.path.dirname(os.path.realpath(__file__))
 
 def process_fill():
-	FOI_DEV_LIST = ['', 'Add', 'Change']
+	FOI_DEV_LIST = ['', 'Add', 'Change', 'thru1997']
 	for i in range(1998, 2017):
 		FOI_DEV_LIST.append(str(i))
 
