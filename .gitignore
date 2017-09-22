@@ -5,6 +5,8 @@ __pycache__/
 .idea/
 foidev/
 .ipynb_checkpoints/
+15_Text_CNN/Data
+15_Text_CNN/runs
 
 *.py[cod]
 *$py.class
